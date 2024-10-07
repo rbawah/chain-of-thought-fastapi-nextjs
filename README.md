@@ -1,7 +1,7 @@
 # Chain-of-Thought prompting with ChatGPT - fullstack FastAPI and Nextjs
 
 ## Overview
-Harness the power of chain-of-thought (CoT) prompting with ChatGPT without having to pay for tier 5 membership, for gpt-4-o1 family of models. For more info on CoT, read my blog article on medium
+Harness the power of chain-of-thought (CoT) prompting with ChatGPT without having to pay for tier 5 membership, for the o1 family of models. For more info on CoT, read my blog article on medium
 Below are detailed instructions on how to set up and run the project using different combinations of tools, such as `make`, Docker, and Python virtual environments.
 
 ## Prerequisites
@@ -20,103 +20,103 @@ You have multiple options for running the project, depending on your preferences
 You can manually set up and run both the backend and frontend services without Docker or Make.
 
 #### Step 1: Set Up Python Virtual Environment
-\`\`\`bash
+```
 python3 -m venv .venv
-\`\`\`
+```
 
 #### Step 2: Install Requirements
-\`\`\`bash
+```
 source .venv/bin/activate
 pip install --upgrade pip
 pip install -r backend/requirements.txt
-\`\`\`
+```
 
 #### Step 3: Start the Backend
-\`\`\`bash
+```
 source .venv/bin/activate
 uvicorn main:app --app-dir backend --host 0.0.0.0 --port 8000 --reload
-\`\`\`
+```
 
 #### Step 4: Start the Frontend
-\`\`\`bash
+```
 cd frontend
 pnpm install
 pnpm run dev
-\`\`\`
+```
 
 ### 2. Running With Make (Without Docker)
 
 You can use `make` commands to simplify the setup and start processes without using Docker.
 
 #### Step 1: Create Python Virtual Environment and Install Requirements
-\`\`\`bash
+```
 make install
-\`\`\`
+```
 
 #### Step 2: Start the Backend
-\`\`\`bash
+```
 make start-backend
-\`\`\`
+```
 
 #### Step 3: Start the Frontend
-\`\`\`bash
+```
 make start-frontend
-\`\`\`
+```
 
 ### 3. Running With Docker (Without Make)
 
 If you prefer to use Docker, you can set up and run the entire stack using Docker Compose.
 
 #### Step 1: Start the Application with Docker Compose
-\`\`\`bash
+```
 docker-compose up --build
-\`\`\`
+```
 
 ### 4. Running With Both Docker and Make
 
 You can also use Make in combination with Docker for a streamlined workflow. This is useful if you want to leverage Docker Compose but also take advantage of `make` commands for convenience.
 
 #### Step 1: Start the Application Using Make and Docker Compose
-\`\`\`bash
+```
 make start
-\`\`\`
+```
 
 ## Makefile Commands
 
 The following commands are available in the Makefile for managing the project:
 
-- \`make help\`  
+- `make help`  
   Display available commands.
 
-- \`make venv\`  
+- `make venv`  
   Create a Python virtual environment in the \`.venv\` directory.
 
-- \`make install\`  
+- `make install`  
   Create a virtual environment and install Python requirements from \`backend/requirements.txt\`.
 
-- \`make start\`  
+- `make start`  
   Start the application using Docker Compose.
 
-- \`make start-backend\`  
+- `make start-backend`  
   Start the backend without Docker (requires the virtual environment to be set up).
 
-- \`make start-frontend\`  
+- `make start-frontend`  
   Start the frontend without Docker (uses \`pnpm\` for dependency management).
 
-- \`make clean\`  
+- `make clean`  
   Remove the virtual environment and temporary files.
 
 ## Clean Up
 
 To clean up your environment, you can run:
-\`\`\`bash
+```
 make clean
-\`\`\`
+```
 
-This command will remove the Python virtual environment and any \`__pycache__\` files generated during development.
+This command will remove the Python virtual environment and any `__pycache__` files generated during development.
 
 ## Notes
 
-- Make sure you have \`pnpm\` installed before running the frontend.
+- Make sure you have `pnpm` installed before running the frontend.
 - If you are using Docker, ensure Docker and Docker Compose are properly installed and running on your system.
-- The backend runs on port \`8000\` by default, and the frontend runs on port \`3000\`. You may need to adjust these settings if you encounter any port conflicts.
+- The backend runs on port `8000` by default, and the frontend runs on port `3000`. You may need to adjust these settings if you encounter any port conflicts.
