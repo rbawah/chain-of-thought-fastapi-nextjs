@@ -4,6 +4,10 @@
 Harness the power of chain-of-thought (CoT) prompting with ChatGPT without having to pay for tier 5 membership, for the o1 family of models. For more info on CoT, read my blog article on medium
 Below are detailed instructions on how to set up and run the project using different combinations of tools, such as `make`, Docker, and Python virtual environments.
 
+
+[![Short demo](https://img.youtube.com/vi/10Yue_3vgxM/0.jpg)](https://youtu.be/10Yue_3vgxM)
+
+
 ## Prerequisites
 - Python 3.11
 - Docker (optional, for containerized deployment)
